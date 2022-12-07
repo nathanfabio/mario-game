@@ -17,7 +17,7 @@ document.addEventListener('keypress', function(e){
 
     
 
-    if (pipePosition <= 120 && marioPosition < 80) {
+    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
     }
