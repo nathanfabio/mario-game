@@ -20,6 +20,8 @@ do {
 }))
 
 
+
+
 document.addEventListener('keypress', function(e){
     if(e.which == 32){
      mario.classList.add('jump');
@@ -59,3 +61,8 @@ document.addEventListener('keypress', function(e){
     }
 
  }, 10);
+
+
+ function restart() {
+   window.location.reload();  
+}

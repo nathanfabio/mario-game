@@ -66,9 +66,26 @@
 
 .game-over-on {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 2;
+    gap: .8rem;
+}
+
+.game-over button {
+    font-family: 'supermario', sans-serif;
+    padding: .4rem;
+    background: linear-gradient( rgb(109, 106, 106), rgb(190, 190, 2));
+    border: 1px solid #000;
+    border-radius: .5rem;
+    color: #fff;
+    transition: .2s;
+}
+
+.game-over button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .game-start {
