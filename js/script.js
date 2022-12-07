@@ -1,6 +1,8 @@
 
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const clouds = document.querySelector('.clouds');
+const gameOver = document.querySelector('.game-over');
 
 document.addEventListener('keypress', function(e){
     if(e.which == 32){
@@ -17,6 +19,7 @@ document.addEventListener('keypress', function(e){
 
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+    const cloudsPosition = clouds.offsetLeft;
 
     
 
@@ -31,6 +34,11 @@ document.addEventListener('keypress', function(e){
         mario.src = './images/game-over.png';
         mario.style.width = '75px'
         mario.style.marginLeft = '47px'
+
+        clouds.style.animation = 'none';
+        clouds.style.left = `${cloudsPosition}px`;
+
+        gameOver.classList.add('game-over-on');
 
         clearInterval(loop);
 

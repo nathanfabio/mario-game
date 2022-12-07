@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'supermario';
+    src: url(../font/SuperMario256.ttf) format(truetype);
+    font-style: normal;
+}
+
 .game {
     width: 100%;
     height: 500px;
@@ -35,6 +41,34 @@
     position: absolute;
     width: 350px;
     animation: clouds-animation 15s infinite linear;
+}
+
+.game-over{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    border: 5px solid #fff;
+    border-radius: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background: linear-gradient(rgb(190, 190, 2), rgb(109, 106, 106));
+}
+
+.game-over p {
+    font-family: 'supermario', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
+    -webkit-text-stroke: 2px #000;
+}
+
+.game-over-on {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 }
 
 @keyframes pipe-animation {
