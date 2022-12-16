@@ -4,9 +4,10 @@ const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
 const gameOver = document.querySelector('.game-over');
 const gameStart = document.querySelector('.game-start');
-const score = document.querySelector('.score-points')
+const score = document.querySelector('.score-points');
 const pointsTable = document.querySelector('.score');
-
+const yourScore = document.querySelector('.your-score');
+// let finalScore = 0;
 
 do {
    pipe.style.animation = 'none';
@@ -15,21 +16,22 @@ do {
    pointsTable.style.display = 'none';
    gameStart.classList.add('game-start-on')
 } while (document.addEventListener('keypress', (event) => {
-   if (event.which == 13) {
-      points = setInterval(function () {
-         let scoreGame = score.innerHTML;
-         let scoreGameOn = parseInt(scoreGame) + 1;
-         score.innerHTML = scoreGameOn;
-      }, 50)
-      gameStart.classList.remove('game-start-on')
-      pointsTable.style.display = '';
-      pipe.style.animation = '';
-      mario.style.animation = '';
-      clouds.style.animation = '';
-   }  
+   if (!gameOver.classList.contains('game-over-on')) {
+      if (event.which == 13) {
+         points = setInterval(function () {
+            let scoreGame = score.innerHTML;
+            let scoreGameOn = parseInt(scoreGame) + 1;
+            let myScore = score.innerHTML = scoreGameOn;
+            yourScore.innerText = `Your score: ${myScore}`;
+         }, 50)
+         gameStart.classList.remove('game-start-on')
+         pipe.style.animation = '';
+         mario.style.animation = '';
+         clouds.style.animation = '';
+         pointsTable.style.display = '';
+      }  
+   }
 }))
-
-
 
 
 document.addEventListener('keypress', function(e){
@@ -70,7 +72,6 @@ document.addEventListener('keypress', function(e){
 
         clearInterval(loop);
         clearInterval(points);
-
     }
 
  }, 10);
