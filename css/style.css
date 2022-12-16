@@ -20,6 +20,29 @@
     overflow: hidden;
 }
 
+.score {
+    font-family: 'supermario', sans-serif;
+    font-size: 1.7rem;
+    color: #fff;
+    background: linear-gradient(rgb(190, 190, 2), rgb(109, 106, 106));
+    -webkit-text-stroke: 1px #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    text-align: center;
+    padding: 0 .5rem;
+    position: absolute;
+    min-width: 4rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    z-index: 5;
+}
+
+.score h2 {
+    font-size: .9rem;
+}
+
 .pipe {
     position: absolute;
     bottom: 0;
@@ -45,8 +68,8 @@
 
 .game-over{
     position: absolute;
-    width: 40%;
-    height: 30%;
+    min-width: 40%;
+    min-height: 35%;
     border: 5px solid #fff;
     border-radius: 40px;
     top: 50%;
@@ -58,12 +81,18 @@
 
 .game-over p {
     font-family: 'supermario', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+}
+
+.game-over p:first-child {
+    font-family: 'supermario', sans-serif;
     font-size: 2.5rem;
     text-align: center;
     color: #fff;
     -webkit-text-stroke: 2px #000;
 }
-
 .game-over-on {
     display: flex;
     flex-direction: column;
@@ -90,7 +119,7 @@
 
 .game-start {
     position: absolute;
-    width: 40%;
+    min-width: 40%;
     height: 60%;
     border: 5px solid #fff;
     border-radius: 3rem;

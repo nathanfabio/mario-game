@@ -4,15 +4,25 @@ const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
 const gameOver = document.querySelector('.game-over');
 const gameStart = document.querySelector('.game-start');
+const score = document.querySelector('.score-points')
+const pointsTable = document.querySelector('.score');
+
 
 do {
    pipe.style.animation = 'none';
    mario.style.animation = 'none';
    clouds.style.animation = 'none';
+   pointsTable.style.display = 'none';
    gameStart.classList.add('game-start-on')
 } while (document.addEventListener('keypress', (event) => {
    if (event.which == 13) {
+      points = setInterval(function () {
+         let scoreGame = score.innerHTML;
+         let scoreGameOn = parseInt(scoreGame) + 1;
+         score.innerHTML = scoreGameOn;
+      }, 50)
       gameStart.classList.remove('game-start-on')
+      pointsTable.style.display = '';
       pipe.style.animation = '';
       mario.style.animation = '';
       clouds.style.animation = '';
@@ -56,7 +66,10 @@ document.addEventListener('keypress', function(e){
 
         gameOver.classList.add('game-over-on');
 
+        pointsTable.style.display = 'none';
+
         clearInterval(loop);
+        clearInterval(points);
 
     }
 
