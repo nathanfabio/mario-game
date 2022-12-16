@@ -156,12 +156,6 @@
 .game-start p span {
     color: #fff;
     -webkit-text-stroke: 1px #000;
-    background-image: linear-gradient(45deg, rgb(190, 190, 2), rgb(109, 106, 106));
-	background-size: 400% 400%;
-	height: 100vh;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-	animation: gradient 2s linear infinite;
 }
 
 
@@ -207,16 +201,4 @@
     to {
         right: 100%;
     }
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
