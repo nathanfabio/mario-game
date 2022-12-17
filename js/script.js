@@ -7,7 +7,6 @@ const gameStart = document.querySelector('.game-start');
 const score = document.querySelector('.score-points');
 const pointsTable = document.querySelector('.score');
 const yourScore = document.querySelector('.your-score');
-// let finalScore = 0;
 
 do {
    pipe.style.animation = 'none';
@@ -77,6 +76,6 @@ document.addEventListener('keypress', function(e){
  }, 10);
 
 
- function restart() {
-   window.location.reload();  
+ function restart(started) {
+   window.location.reload();
 }
