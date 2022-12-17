@@ -15,9 +15,9 @@ do {
    clouds.style.animation = 'none';
    pointsTable.style.display = 'none';
    gameStart.classList.add('game-start-on')
-} while (document.addEventListener('keypress', (event) => {
+} while (document.addEventListener('keypress', (e) => {
    if (!gameOver.classList.contains('game-over-on')) {
-      if (event.which == 13) {
+      if (e.key === "Enter") {
          points = setInterval(function () {
             let scoreGame = score.innerHTML;
             let scoreGameOn = parseInt(scoreGame) + 1;
@@ -35,7 +35,7 @@ do {
 
 
 document.addEventListener('keypress', function(e){
-    if(e.which == 32){
+    if(e.key === " "){
      mario.classList.add('jump');
      setTimeout(() => {
         mario.classList.remove('jump');
